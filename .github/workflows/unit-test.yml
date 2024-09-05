@@ -1,0 +1,21 @@
+name: Testing Suite
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  php-tests:
+    if: github.event.pull_request.draft == false
+    strategy:
+      matrix:
+        php: ["8.2", "8.1", "8.0"]
+        wordpress: ["latest"]
+        multisite: [false, true]
+    uses: alleyinteractive/.github/.github/workflows/php-tests.yml@main
+    with:
+      php: ${{ matrix.php }}
+      wordpress: ${{ matrix.wordpress }}
+      multisite: ${{ matrix.multisite }}

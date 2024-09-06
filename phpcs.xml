@@ -5,6 +5,7 @@
     <file>src/</file>
     <file>tests/</file>
     <exclude-pattern>vendor/</exclude-pattern>
+    <exclude-pattern>tests/</exclude-pattern>
 
     <!--
     Pass some flags to PHPCS:

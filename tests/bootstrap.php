@@ -13,6 +13,7 @@
 \Mantle\Testing\install();
 
 // Callback functions for testing.
+
 function alley_wp_captain_hook_action_callback() {
 	echo 'This is an action callback';
 }

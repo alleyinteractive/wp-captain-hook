@@ -87,11 +87,11 @@ function remove_action_by_force( string $hook, $callback, $priority = 10 ) {
  *
  * @param string   $hook         The hook name.
  * @param callable $callback     The callback to reprioritize.
- * @param mixed    $old_priority Optional. The old priority of the callback. Default is 10.
+ * @param mixed    $old_priority The old priority of the callback.
  * @param mixed    $new_priority The new priority of the callback.
  * @return bool Whether the filter was reprioritized.
  */
-function reprioritize_filter( string $hook, $callback, $old_priority = 10, $new_priority ) {
+function reprioritize_filter( string $hook, $callback, $old_priority, $new_priority ) {
 	$filter = find_hooked_callback( $hook, $callback, $old_priority );
 	if ( $filter ) {
 		$removed = \remove_filter( $hook, $filter['function'], $old_priority );
@@ -108,11 +108,11 @@ function reprioritize_filter( string $hook, $callback, $old_priority = 10, $new_
  *
  * @param string   $hook         The hook name.
  * @param callable $callback     The callback to reprioritize.
- * @param mixed    $old_priority Optional. The old priority of the callback. Default is 10.
+ * @param mixed    $old_priority The old priority of the callback.
  * @param mixed    $new_priority The new priority of the callback.
  * @return bool Whether the action was reprioritized.
  */
-function reprioritize_action( string $hook, $callback, $old_priority = 10, $new_priority ) {
+function reprioritize_action( string $hook, $callback, $old_priority, $new_priority ) {
 	return reprioritize_filter( $hook, $callback, $old_priority, $new_priority );
 }
 

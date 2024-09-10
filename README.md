@@ -44,7 +44,6 @@ class Plugin_Main {
 }
 add_action( 'after_setup_theme', function () {
   new Plugin_Main( new \Logger( 'path/to/file.log' ) );
-
 } );
 ```
 

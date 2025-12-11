@@ -6,6 +6,9 @@ on:
       - main
     types: [opened, synchronize, reopened, ready_for_review]
 
+permissions:
+  contents: read
+
 jobs:
   # We use a single job to ensure that all steps run in the same environment and
   # reduce the number of minutes used.
